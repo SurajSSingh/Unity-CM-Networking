@@ -5,10 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class ReturnToGame : MonoBehaviour
 {
-    void Update()
+
+    public GameObject PauseMenu;
+
+    void Start()
     {
-        if (Input.GetMouseButton(0)){
-            SceneManager.LoadScene("Room 2 Pong");
+        CloseMenu();
+    }
+
+    void FixedUpdate()
+    {
+        if (Input.GetKey(KeyCode.Escape)){
+            PauseMenu.SetActive(true);
         }
+        Debug.Log(Input.GetKey(KeyCode.Escape));
+    }
+
+    public void CloseMenu()
+    {
+        PauseMenu.SetActive(false);
     }
 }
