@@ -13,12 +13,11 @@ public class ReturnToGame : MonoBehaviour
         CloseMenu();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (Input.GetKey(KeyCode.Escape)){
             PauseMenu.SetActive(true);
         }
-        Debug.Log(Input.GetKey(KeyCode.Escape));
     }
 
     public void CloseMenu()
