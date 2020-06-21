@@ -13,18 +13,18 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - PostProcessing
+  - Ground
+  - DynamicProps
+  - StaicProps
+  - DamagedProps
+  - Ally
+  - Enemy
+  - Dead
+  - Loot
+  - DeadlyCollider
+  - OnlyGroundTrigger
+  - Platform
   - 
   - 
   - 
