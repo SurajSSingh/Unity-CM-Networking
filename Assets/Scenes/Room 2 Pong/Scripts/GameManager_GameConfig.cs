@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class GameManager_GameConfig : MonoBehaviour
+public class GameManager_GameConfig : MonoBehaviourPunCallbacks
 {
 
     public GameObject pong;
@@ -19,12 +20,18 @@ public class GameManager_GameConfig : MonoBehaviour
         bottomLeft = Camera.main.ScreenToWorldPoint (new Vector2 (0,0));
         topRight = Camera.main.ScreenToWorldPoint(new Vector2 (Screen.width, Screen.height));
 
+        Instantiate(pong, pong.transform.position, pong.transform.rotation);
 
-        Instantiate(pong);
+        GameObject pongplayer1 = Instantiate(pongplayer, pongplayer.transform.position, pongplayer.transform.rotation);
+        GameObject pongplayer2 = Instantiate(pongplayer, pongplayer.transform.position, pongplayer.transform.rotation);
+
+
+        /*
+        PhotonNetwork.Instantiate(pong.name, pong.transform.position, pong.transform.rotation);
         
-        GameObject pongplayer1 = Instantiate (pongplayer);
-        GameObject pongplayer2 = Instantiate (pongplayer);
-        
+        GameObject pongplayer1 = PhotonNetwork.Instantiate(pongplayer.name, pongplayer.transform.position, pongplayer.transform.rotation);
+        GameObject pongplayer2 = PhotonNetwork.Instantiate(pongplayer.name, pongplayer.transform.position, pongplayer.transform.rotation);
+        */
         pongplayer1.GetComponent<Pong_Paddles>().Init(true);
         pongplayer2.GetComponent<Pong_Paddles>().Init(false);
         
