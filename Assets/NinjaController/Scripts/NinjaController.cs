@@ -8,6 +8,7 @@ namespace NinjaController {
   [RequireComponent(typeof(Rigidbody2D))]
   [RequireComponent(typeof(Collider2D))]
   public class NinjaController : MonoBehaviourPunCallbacks {
+  public SpriteRenderer sr;
 
     private Rigidbody2D RBody { get; set; }
 
@@ -99,6 +100,8 @@ namespace NinjaController {
                 return;
             }
 
+            float sign = Mathf.Sign(RBody.velocity.x);
+            sr.flipX = sign < 0 ? true : false;
 
       //let's reset forces to 0 and then add regular gravitation
       SimResetForce();
