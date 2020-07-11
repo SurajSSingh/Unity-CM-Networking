@@ -47,9 +47,4 @@ public class GameManager_GameConfig : MonoBehaviourPunCallbacks
         
     }
 
-    void Update()
-    {
-        Debug.Log(Input.mousePosition);
-        
-    }
 }
