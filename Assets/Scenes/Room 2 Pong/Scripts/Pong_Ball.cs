@@ -23,14 +23,15 @@ public class Pong_Ball : MonoBehaviour
     {
         transform.Translate(direction * speed * Time.deltaTime);
 
-        if (transform.position.y < GameManager_GameConfig.bottomLeft.y + radius && direction.y <0)
+        if (transform.position.y < GameManager_GameConfig.bottomLeft.y + radius/6 && direction.y <0)
         {
             direction.y = -direction.y;
         }
 
-        if (transform.position.y > GameManager_GameConfig.topRight.y - radius && direction.y > 0)
+        if (transform.position.y > GameManager_GameConfig.topRight.y - radius/6 && direction.y > 0)
         {
             direction.y = -direction.y;
+
         }
 
 
@@ -65,11 +66,13 @@ public class Pong_Ball : MonoBehaviour
             if (isRight == true && direction.x > 0)
             {
                 direction.x = -direction.x;
+                speed += 1f;
             }
 
             if (isRight == false && direction.x < 0)
             {
                 direction.x = -direction.x;
+                speed += 1f;
             }
         }
     }
