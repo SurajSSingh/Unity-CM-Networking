@@ -1,12 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
+using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 namespace NinjaController {
 
   [RequireComponent(typeof(Rigidbody2D))]
   [RequireComponent(typeof(Collider2D))]
-  public class NinjaController : MonoBehaviour {
+  public class NinjaController : MonoBehaviourPunCallbacks {
+  public SpriteRenderer sr;
 
     private Rigidbody2D RBody { get; set; }
 
@@ -90,8 +94,19 @@ namespace NinjaController {
       RBody = GetComponent<Rigidbody2D>();
       allRenderers = new List<Renderer>(GetComponentsInChildren<Renderer>(true));
     }
-      
+
     public void Update() {
+
+            if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
+            {
+                return;
+            }
+
+            float sign = Mathf.Sign(Input.GetAxis("Horizontal"));
+            if(sign != 0)
+            {
+                this.gameObject.transform.localScale = new Vector3(sign * transform.localScale.x, transform.localScale.y * 1);
+            }
 
       //let's reset forces to 0 and then add regular gravitation
       SimResetForce();
@@ -284,7 +299,7 @@ namespace NinjaController {
       const float forceEnemyCollision = 15.0f;
       currentVelocity = contactVector.normalized * forceEnemyCollision;
     }
-      
+
     public void ResetPlayer() {
       currentVelocity = Vector2.zero;
     }
