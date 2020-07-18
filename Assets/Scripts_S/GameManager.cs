@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using Photon.Pun;
 using Photon.Realtime;
 
-public class NewBehaviourScript : MonoBehaviour
+public class GameManager : MonoBehaviourPunCallbacks
 {
 
     void LoadArena()
