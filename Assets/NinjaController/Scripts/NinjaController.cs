@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
+using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 namespace NinjaController {
 
@@ -100,8 +102,11 @@ namespace NinjaController {
                 return;
             }
 
-            float sign = Mathf.Sign(RBody.velocity.x);
-            sr.flipX = sign < 0 ? true : false;
+            float sign = Mathf.Sign(Input.GetAxis("Horizontal"));
+            if(sign != 0)
+            {
+                this.gameObject.transform.localScale = new Vector3(sign * transform.localScale.x, transform.localScale.y * 1);
+            }
 
       //let's reset forces to 0 and then add regular gravitation
       SimResetForce();

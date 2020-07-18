@@ -247,6 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6296526308853577717}
   - component: {fileID: 1149156274122349667}
+  - component: {fileID: 2574894832762711010}
   m_Layer: 0
   m_Name: temp
   m_TagString: Untagged
@@ -318,6 +319,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2574894832762711010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146684274143103143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 258e5890a0d3bcc438be567895c2d879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 1227681206985853245}
+  bulletPrefab: {fileID: 7670616763486543042, guid: 54b47ef6285f9a443ac5234829c81cc0,
+    type: 3}
 --- !u!1 &2518807482711138359
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,7 +506,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1227681206985853245}
   m_Layer: 0
-  m_Name: Firepoint
+  m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
