@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using Photon.Pun;
 using Photon.Realtime;
 
-public class GameManager : MonoBehaviourPunCallbacks
+public class NewBehaviourScript : MonoBehaviour
 {
 
     void LoadArena()
@@ -49,13 +49,13 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public override void OnLeftRoom()
     {
-        SceneManager.LoadScene(0);
+
     }
 
-    // This is for the quit the quit button
-    public void LeaveRoom()
+    // Update is called once per frame
+    void Update()
     {
-        PhotonNetwork.LeaveRoom();
+
     }
 
 }
