@@ -15,11 +15,9 @@ public class ReturnToGame : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
-        {
+        if (Input.GetKey(KeyCode.Escape)){
             PauseMenu.SetActive(true);
         }
-        Debug.Log(Input.GetKey(KeyCode.Escape));
     }
 
     public void CloseMenu()
