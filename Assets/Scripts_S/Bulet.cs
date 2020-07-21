@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bulet : MonoBehaviour
 {
 
 	public float speed = 1000f;

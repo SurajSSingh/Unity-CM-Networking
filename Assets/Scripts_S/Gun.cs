@@ -9,7 +9,7 @@ public class Gun : ScriptableObject
     public string Name;
     public float Firerate;
     public int AmmoCount;
-    public Bullet bullet;
+    public BulletType bullet;
     public int Cooldown;
 }
 
