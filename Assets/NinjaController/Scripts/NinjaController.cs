@@ -11,6 +11,7 @@ namespace NinjaController {
   [RequireComponent(typeof(Collider2D))]
   public class NinjaController : MonoBehaviourPunCallbacks {
   public SpriteRenderer sr;
+        public GameObject firepoint;
 
     private Rigidbody2D RBody { get; set; }
 
@@ -102,10 +103,13 @@ namespace NinjaController {
                 return;
             }
 
-            float sign = Mathf.Sign(Input.GetAxis("Horizontal"));
-            if(sign != 0)
+            //float sign = Mathf.Sign(Input.GetAxisRaw("Horizontal"));
+            float sign = Mathf.Sign(RBody.velocity.x);
+            if (sign != 0)
             {
                 this.gameObject.transform.localScale = new Vector3(sign * transform.localScale.x, transform.localScale.y * 1);
+                firepoint.transform.localScale = new Vector3(sign * transform.localScale.x, transform.localScale.y * 1);
+                firepoint.transform.eulerAngles = new Vector3(0, 0, sign < 0? -180: 0);
             }
 
       //let's reset forces to 0 and then add regular gravitation

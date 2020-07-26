@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bulet : MonoBehaviour
 {
 
 	public float speed = 1000f;
@@ -22,12 +22,14 @@ public class Bullet : MonoBehaviour
 		//Enemy enemy = hitInfo.GetComponent<Enemy>();
 		//if (enemy != null)
 		//{
-			//enemy.TakeDamage(damage);
+		//enemy.TakeDamage(damage);
 		//}
 		//
 		// Instantiate(impactEffect, transform.position, transform.rotation);
-
-		Destroy(gameObject);
+		if (this.transform.parent != hitInfo.transform)
+		{
+			Destroy(gameObject);
+		}
 	}
 
 }
