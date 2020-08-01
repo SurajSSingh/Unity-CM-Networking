@@ -7,6 +7,7 @@ using Photon.Realtime;
 
 public class GameManager : MonoBehaviourPunCallbacks
 {
+    public List<string> levels;
 
     void LoadArena()
     {
@@ -14,9 +15,28 @@ public class GameManager : MonoBehaviourPunCallbacks
         {
             Debug.LogError("PhotonNetwork : Trying to Load a level but we are not the master Client");
         }
-       
+        
         Debug.LogFormat("PhotonNetwork : Loading Level : {0}", PhotonNetwork.CurrentRoom.PlayerCount);
-        PhotonNetwork.LoadLevel("Room for " + PhotonNetwork.CurrentRoom.PlayerCount);
+        //PhotonNetwork.LoadLevel("Room for " + PhotonNetwork.CurrentRoom.PlayerCount);
+        if(levels.Count >= 3)
+        {
+            if(PhotonNetwork.CurrentRoom.PlayerCount == 2)
+            {
+                PhotonNetwork.LoadLevel(levels[0]);
+            }
+            else if (PhotonNetwork.CurrentRoom.PlayerCount == 3)
+            {
+                PhotonNetwork.LoadLevel(levels[1]);
+            }
+            else if (PhotonNetwork.CurrentRoom.PlayerCount == 4)
+            {
+                PhotonNetwork.LoadLevel(levels[2]);
+            }
+            else if (levels.Count > 3)
+            {
+                PhotonNetwork.LoadLevel(levels[3]);
+            }
+        }
     }
 
     public override void OnPlayerEnteredRoom(Player other)
