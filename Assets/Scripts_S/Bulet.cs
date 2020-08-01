@@ -22,12 +22,14 @@ public class Bulet : MonoBehaviour
 		//Enemy enemy = hitInfo.GetComponent<Enemy>();
 		//if (enemy != null)
 		//{
-			//enemy.TakeDamage(damage);
+		//enemy.TakeDamage(damage);
 		//}
 		//
 		// Instantiate(impactEffect, transform.position, transform.rotation);
-
-		Destroy(gameObject);
+		if (this.transform.parent != hitInfo.transform)
+		{
+			Destroy(gameObject);
+		}
 	}
 
 }

@@ -54,6 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sr: {fileID: 1149156274122349667}
+  firepoint: {fileID: 6735853832621676723}
   physicsParams:
     playerMass: 12.5
     gameGravity: -19.5
@@ -249,7 +250,7 @@ GameObject:
   - component: {fileID: 1149156274122349667}
   - component: {fileID: 2574894832762711010}
   m_Layer: 0
-  m_Name: temp
+  m_Name: PlayerImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -520,7 +521,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6735853832621676723}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.486, y: 0.941, z: -0.79984313}
+  m_LocalPosition: {x: 0.61, y: 0.99, z: -0.79984313}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 467556}

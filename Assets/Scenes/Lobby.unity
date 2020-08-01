@@ -457,6 +457,16 @@ PrefabInstance:
       propertyPath: viewIdField
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1227681206985853245, guid: 7201f8954189c4d769c48f324a1d920f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.017
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227681206985853245, guid: 7201f8954189c4d769c48f324a1d920f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.613
+      objectReference: {fileID: 0}
     - target: {fileID: 6735853832621676723, guid: 7201f8954189c4d769c48f324a1d920f,
         type: 3}
       propertyPath: m_Name
