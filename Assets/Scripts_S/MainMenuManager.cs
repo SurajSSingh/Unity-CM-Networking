@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class MainMenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach(GameObject lobby in gameLobbies)
+        PlayerPrefs.SetString("name", "Unnamed");
+        foreach (GameObject lobby in gameLobbies)
         {
             lobby.SetActive(false);
         }
@@ -41,6 +43,12 @@ public class MainMenuManager : MonoBehaviour
 
     public void UpdateName(string name)
     {
+        if (string.IsNullOrEmpty(name))
+        {
+            Debug.LogError("Player Name is null or empty");
+            return;
+        }
+        PhotonNetwork.NickName = name;
         PlayerPrefs.SetString("name", name);
     }
 

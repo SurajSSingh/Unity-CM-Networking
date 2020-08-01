@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Room 2 Pong/Pause Menu Scene.unity
-    guid: e9586ec86cc1097438a881134972608e
+    path: Assets/Scenes/MainMenu.unity
+    guid: c0999c737d7074228804a805d3192d89
   - enabled: 1
     path: Assets/Scenes/Room 2 Pong/Room 2 Pong.unity
-    guid: 935b399b965dedd4697814b17eb7d547
+    guid: 3f8eda3b024b940b2874f43322fe31c5
+  - enabled: 1
+    path: Assets/Scenes/Lobby.unity
+    guid: b5a63b233f93e482c9ff7dc9a2f22cc9
+  - enabled: 1
+    path: Assets/Unity-CM-add in.unity
+    guid: eb9500a8875031349bfbe2c409ea2445
   m_configObjects: {}
