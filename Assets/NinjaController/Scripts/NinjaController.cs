@@ -109,7 +109,7 @@ namespace NinjaController {
             {
                 this.gameObject.transform.localScale = new Vector3(sign * transform.localScale.x, transform.localScale.y * 1);
                 firepoint.transform.localScale = new Vector3(sign * transform.localScale.x, transform.localScale.y * 1);
-                firepoint.transform.eulerAngles = new Vector3(0, 0, sign < 0? -180: 0);
+                firepoint.transform.eulerAngles = new Vector3(0, 0, sign < 0? -180: sign > 0? 0: firepoint.transform.eulerAngles.z);
             }
 
       //let's reset forces to 0 and then add regular gravitation
