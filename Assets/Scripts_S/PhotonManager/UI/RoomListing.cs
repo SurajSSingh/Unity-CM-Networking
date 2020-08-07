@@ -14,7 +14,7 @@ public class RoomListing : MonoBehaviour
     public void SetRoomInfo(RoomInfo roomInfo)
     {
         this.roomInfo = roomInfo;
-        text.text = roomInfo.MaxPlayers + ", " + roomInfo.Name;
+        text.text = roomInfo.Name;
     }
 
     public void OnClick_Button()

@@ -10,7 +10,7 @@ public class RoomListingsMenu : MonoBehaviourPunCallbacks
     public RoomListing roomListingPrefab;
 
     private List<RoomListing> listings = new List<RoomListing>();
-    public GameObject GameLobby;
+    public List<GameObject> gameLobbies = new List<GameObject>();
 
     public override void OnJoinedRoom()
     {
@@ -39,7 +39,7 @@ public class RoomListingsMenu : MonoBehaviourPunCallbacks
                 if(index == -1)
                 {
                     RoomListing listing = Instantiate(roomListingPrefab, content);
-                    listing.GameLobby = GameLobby;
+                    listing.GameLobby = gameLobbies[info.MaxPlayers-2];
                     if (listing != null)
                     {
                         listing.SetRoomInfo(info);
