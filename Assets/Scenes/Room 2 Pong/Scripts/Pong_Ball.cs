@@ -6,16 +6,18 @@ public class Pong_Ball : MonoBehaviour
 {
     [SerializeField]
     public float speed;
-
+    
     float radius;
 
 
     Vector2 direction;
 
+    public Winmanager wm;
+
     void Start()
     {
+        wm = GameObject.Find("Canvas").GetComponent<Winmanager>();
         direction = Vector2.one.normalized;
-
         radius = transform.localScale.x / 2;
     }    
 
@@ -42,12 +44,14 @@ public class Pong_Ball : MonoBehaviour
         if (transform.position.x < GameManager_GameConfig.bottomLeft.x + radius && direction.x < 0)
         {
             Debug.Log("Player on the right wins!");
+            wm.WinGame(false);
             Time.timeScale = 0;
         }
 
         if (transform.position.x > GameManager_GameConfig.topRight.x - radius && direction.x > 0)
         {
             Debug.Log("Player on the left wins!");
+            wm.WinGame(true);
             Time.timeScale = 0;
         }
 
@@ -66,13 +70,20 @@ public class Pong_Ball : MonoBehaviour
             if (isRight == true && direction.x > 0)
             {
                 direction.x = -direction.x;
-                speed += 1f;
+                 if(speed < 21f)
+                 {
+                     speed += 1f;
+                 }
             }
 
             if (isRight == false && direction.x < 0)
             {
                 direction.x = -direction.x;
-                speed += 1f;
+
+                if (speed < 21f)
+                {
+                    speed += 1f;
+                }
             }
         }
     }
