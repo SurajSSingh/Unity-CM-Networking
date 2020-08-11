@@ -2504,7 +2504,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2514,7 +2514,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: f935527a7ba867049b832223156cbfbc,
+      type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -2580,7 +2581,7 @@ MonoBehaviour:
       m_Calls: []
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
-  m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
+  m_SelectionColor: {r: 1, g: 1, b: 1, a: 1}
   m_Text: 
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
@@ -2611,8 +2612,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: d16d3ce2413af4544a30ea953d58b659, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2852,7 +2853,7 @@ PrefabInstance:
     - target: {fileID: 7627722044771568312, guid: fb5cbc1c7305d4d1285c5fbb91a6221c,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7627722044771568312, guid: fb5cbc1c7305d4d1285c5fbb91a6221c,
         type: 3}
@@ -2883,6 +2884,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontSize
       value: 53.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627722044771568312, guid: fb5cbc1c7305d4d1285c5fbb91a6221c,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb5cbc1c7305d4d1285c5fbb91a6221c, type: 3}
