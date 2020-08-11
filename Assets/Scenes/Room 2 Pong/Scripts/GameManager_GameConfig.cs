@@ -25,13 +25,16 @@ public class GameManager_GameConfig : MonoBehaviourPunCallbacks
         
 
 
-        if (PhotonNetwork.IsConnected) {
+        if (PhotonNetwork.IsConnected && PhotonNetwork.IsMasterClient) {
             PhotonNetwork.Instantiate(pong.name, pong.transform.position, pong.transform.rotation);
 
             GameObject pongplayer1 = PhotonNetwork.Instantiate(pongplayer.name, pongplayer.transform.position, pongplayer.transform.rotation);
             GameObject pongplayer2 = PhotonNetwork.Instantiate(pongplayer.name, pongplayer.transform.position, pongplayer.transform.rotation);
+
+            pongplayer1.GetComponent<Pong_Paddles>().Init(true);
+            pongplayer2.GetComponent<Pong_Paddles>().Init(false);
         }
-        else
+        else if (!PhotonNetwork.IsConnected)
         {
 
             Instantiate(pong, pong.transform.position, pong.transform.rotation);
