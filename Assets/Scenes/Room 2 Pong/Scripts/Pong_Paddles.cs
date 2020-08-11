@@ -38,6 +38,7 @@ public class Pong_Paddles : MonoBehaviourPunCallbacks
             input = "Left Player";
             if (PhotonNetwork.IsConnected)
             {
+                Debug.Log(PhotonNetwork.PlayerList[0]);
                 photonView.TransferOwnership(PhotonNetwork.PlayerListOthers[0]);
             }
         }
@@ -50,7 +51,7 @@ public class Pong_Paddles : MonoBehaviourPunCallbacks
     {
         
         //Move the players:
-        if (!photonView.IsMine)
+        if (PhotonNetwork.IsConnected && !photonView.IsMine)
         {
             return;
         }
