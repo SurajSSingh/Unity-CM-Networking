@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
 
 public class Pong_Paddles : MonoBehaviourPunCallbacks
 {
@@ -38,7 +39,13 @@ public class Pong_Paddles : MonoBehaviourPunCallbacks
             input = "Left Player";
             if (PhotonNetwork.IsConnected)
             {
-                Debug.Log(PhotonNetwork.PlayerList[0]);
+                Debug.Log(PhotonNetwork.PlayerList.GetLength(0));
+                foreach(Player p in PhotonNetwork.PlayerList)
+                {
+                    Debug.Log(p);
+                }
+                
+                Debug.Log(PhotonNetwork.PlayerListOthers);
                 photonView.TransferOwnership(PhotonNetwork.PlayerListOthers[0]);
             }
         }
