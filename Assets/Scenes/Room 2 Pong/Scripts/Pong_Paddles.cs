@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class Pong_Paddles : MonoBehaviour
+public class Pong_Paddles : MonoBehaviourPunCallbacks
 {
     [SerializeField]
     public float speed;
@@ -35,6 +36,10 @@ public class Pong_Paddles : MonoBehaviour
             pos = new Vector2(GameManager_GameConfig.bottomLeft.x, 0);
             pos += Vector2.right * transform.localScale.x;
             input = "Left Player";
+            if (PhotonNetwork.IsConnected)
+            {
+                photonView.TransferOwnership(PhotonNetwork.PlayerListOthers[0]);
+            }
         }
         transform.position = pos;
         transform.name = input;
@@ -43,8 +48,12 @@ public class Pong_Paddles : MonoBehaviour
 
     void Update()
     {
+        float move = 0;
         //Move the players:
-        float move = Input.GetAxis(input) * Time.deltaTime * speed;
+        if (photonView.IsMine)
+        {
+            move = Input.GetAxis(input) * Time.deltaTime * speed;
+        }
 
         if (transform.position.y < GameManager_GameConfig.bottomLeft.y + height / 2 && move <0)
         {
