@@ -48,12 +48,14 @@ public class Pong_Paddles : MonoBehaviourPunCallbacks
 
     void Update()
     {
-        float move = 0;
+        
         //Move the players:
-        if (photonView.IsMine)
+        if (!photonView.IsMine)
         {
-            move = Input.GetAxis(input) * Time.deltaTime * speed;
+            return;
         }
+
+        float move = Input.GetAxis(input) * Time.deltaTime * speed;
 
         if (transform.position.y < GameManager_GameConfig.bottomLeft.y + height / 2 && move <0)
         {
