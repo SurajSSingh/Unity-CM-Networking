@@ -11,7 +11,7 @@ public class ShooterGameManager : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-        if (spawnpoints.Count >= 3)
+        if (spawnpoints.Count >= 3 && PhotonNetwork.IsMasterClient)
         {
             int count = 0;
             foreach(Player p in PhotonNetwork.PlayerList)
