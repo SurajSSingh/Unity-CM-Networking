@@ -39,8 +39,7 @@ public class Pong_Paddles : MonoBehaviourPunCallbacks
             input = "Left Player";
             if (PhotonNetwork.IsConnected)
             {
-                Debug.Log(PhotonNetwork.PlayerList.GetLength(0));
-                foreach(Player p in PhotonNetwork.PlayerList)
+                foreach(Player p in PhotonNetwork.PlayerListOthers)
                 {
                     Debug.Log(p);
                 }
