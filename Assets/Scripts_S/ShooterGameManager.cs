@@ -12,7 +12,13 @@ public class ShooterGameManager : MonoBehaviourPunCallbacks
     {
         if (spawnpoints.Count >= 3)
         {
-            GameObject ninja = PhotonNetwork.Instantiate(ninjaPrefab.name, spawnpoints[0].position, spawnpoints[0].rotation);
+            int count = 0;
+            foreach(Player p in PhotonNetwork.PlayerList)
+            {
+                GameObject ninja = PhotonNetwork.Instantiate(ninjaPrefab.name, spawnpoints[count].position, spawnpoints[count].rotation);
+                photonView.TransferOwnership(p);
+                count += 1;
+            }
         }
     }
 

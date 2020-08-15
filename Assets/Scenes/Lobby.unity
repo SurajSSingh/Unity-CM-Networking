@@ -359,6 +359,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ninja
       objectReference: {fileID: 0}
+    - target: {fileID: 175128, guid: 7201f8954189c4d769c48f324a1d920f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 467556, guid: 7201f8954189c4d769c48f324a1d920f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.668
@@ -403,74 +407,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 467556, guid: 7201f8954189c4d769c48f324a1d920f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.32645
-      objectReference: {fileID: 0}
-    - target: {fileID: 467556, guid: 7201f8954189c4d769c48f324a1d920f, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.32645
-      objectReference: {fileID: 0}
-    - target: {fileID: 467556, guid: 7201f8954189c4d769c48f324a1d920f, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.32645
-      objectReference: {fileID: 0}
-    - target: {fileID: 6126224, guid: 7201f8954189c4d769c48f324a1d920f, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11436154, guid: 7201f8954189c4d769c48f324a1d920f, type: 3}
-      propertyPath: physicsParams.jumpUpForce
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11436154, guid: 7201f8954189c4d769c48f324a1d920f, type: 3}
-      propertyPath: physicsParams.jumpUpVel
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 11436154, guid: 7201f8954189c4d769c48f324a1d920f, type: 3}
-      propertyPath: physicsParams.jumpGravity
-      value: -30
-      objectReference: {fileID: 0}
-    - target: {fileID: 11436154, guid: 7201f8954189c4d769c48f324a1d920f, type: 3}
-      propertyPath: physicsParams.onGroundMoveHorizontalForce
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 11436154, guid: 7201f8954189c4d769c48f324a1d920f, type: 3}
-      propertyPath: physicsParams.onGroundMaxVelHorizontal
-      value: 12.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11436154, guid: 7201f8954189c4d769c48f324a1d920f, type: 3}
-      propertyPath: physicsParams.inAirMoveHorizontalForce
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 11436154, guid: 7201f8954189c4d769c48f324a1d920f, type: 3}
-      propertyPath: physicsParams.inAirMaxVelHorizontal
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124232681761610759, guid: 7201f8954189c4d769c48f324a1d920f,
-        type: 3}
-      propertyPath: ObservedComponents.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1124232681761610759, guid: 7201f8954189c4d769c48f324a1d920f,
         type: 3}
       propertyPath: viewIdField
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1227681206985853245, guid: 7201f8954189c4d769c48f324a1d920f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.017
-      objectReference: {fileID: 0}
-    - target: {fileID: 1227681206985853245, guid: 7201f8954189c4d769c48f324a1d920f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.613
-      objectReference: {fileID: 0}
-    - target: {fileID: 6735853832621676723, guid: 7201f8954189c4d769c48f324a1d920f,
-        type: 3}
-      propertyPath: m_Name
-      value: FirePoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7201f8954189c4d769c48f324a1d920f, type: 3}

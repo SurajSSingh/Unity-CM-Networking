@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 175128}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -19, y: 25, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.32645, y: 0.32645, z: 0.32645}
   m_Children:
   - {fileID: 404746}
   - {fileID: 98911482929523636}
@@ -58,16 +58,16 @@ MonoBehaviour:
   physicsParams:
     playerMass: 12.5
     gameGravity: -19.5
-    jumpUpForce: 0.25
-    jumpUpVel: 18.75
-    jumpGravity: -22.5
+    jumpUpForce: 1
+    jumpUpVel: 10
+    jumpGravity: -30
     jumpWallVelVertical: 12
     jumpWallVelHorizontal: 7.5
-    inAirMaxVelHorizontal: 27.5
-    inAirMoveHorizontalForce: 12.5
+    inAirMaxVelHorizontal: 22
+    inAirMoveHorizontalForce: 10
     inAirMoveHorizontalForceReverse: 28.75
-    onGroundMaxVelHorizontal: 25
-    onGroundMoveHorizontalForce: 20
+    onGroundMaxVelHorizontal: 12.5
+    onGroundMoveHorizontalForce: 10
     onGroundMoveHorizontalForceReverse: 45
     groundFriction: 35
     groundFrictionEpsilon: 0.75
@@ -138,7 +138,7 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 1
   ObservedComponents:
   - {fileID: -1260763867313301840}
   viewIdField: 0
@@ -521,7 +521,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6735853832621676723}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.61, y: 0.99, z: -0.79984313}
+  m_LocalPosition: {x: 0.613, y: 1.017, z: -0.79984313}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 467556}
