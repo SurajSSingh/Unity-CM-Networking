@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class PrefabWeapon : MonoBehaviour
+public class PrefabWeapon : MonoBehaviourPunCallbacks
 {
 
 	public Transform firePoint;
@@ -11,7 +13,11 @@ public class PrefabWeapon : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (Input.GetButtonDown("Fire1"))
+        //if (!photonView.IsMine)
+        //{
+        //    return;
+        //}
+        if (Input.GetButtonDown("Fire1"))
 		{
 			Shoot();
 		}

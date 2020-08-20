@@ -105,15 +105,18 @@ namespace NinjaController {
 
             //float sign = Mathf.Sign(Input.GetAxisRaw("Horizontal"));
             float sign = Mathf.Sign(RBody.velocity.x);
-            if (sign != 0)
+
+            if (RBody.velocity.x != 0)
             {
+                UnityEngine.Debug.Log(sign);
                 this.gameObject.transform.localScale = new Vector3(sign * transform.localScale.x, transform.localScale.y * 1);
-                firepoint.transform.localScale = new Vector3(sign * transform.localScale.x, transform.localScale.y * 1);
-                firepoint.transform.eulerAngles = new Vector3(0, 0, sign < 0? -180: sign > 0? 0: firepoint.transform.eulerAngles.z);
+                firepoint.transform.localPosition = new Vector3(-1 * sign * firepoint.transform.localPosition.x, firepoint.transform.localPosition.y);
+                firepoint.transform.localEulerAngles = new Vector3(0, 0, sign < 0 ? -180 : 0);
             }
 
-      //let's reset forces to 0 and then add regular gravitation
-      SimResetForce();
+
+            //let's reset forces to 0 and then add regular gravitation
+            SimResetForce();
       SimAddForce(new Vector2(0, PhysicsParams.gameGravity) * EntityMass);
 
       //process key input (like jumping key pressed, etc...)
