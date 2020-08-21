@@ -13,7 +13,8 @@ public Rigidbody2D rb;
     Vector2 mousePos;
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>(); 
+        rb = GetComponent<Rigidbody2D>();
+        cam = Camera.main;
     }
 
     // Update is called once per frame
@@ -24,14 +25,14 @@ public Rigidbody2D rb;
        
        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
       
-       Debug.Log(movement);
+       //Debug.Log(movement);
     }
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
         Vector2 lookDir = mousePos - rb.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg + -180f;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         rb.rotation = angle;
     }
 }

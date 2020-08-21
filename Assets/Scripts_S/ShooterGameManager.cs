@@ -17,7 +17,7 @@ public class ShooterGameManager : MonoBehaviourPunCallbacks
             foreach(Player p in PhotonNetwork.PlayerList)
             {
                 GameObject ninja = PhotonNetwork.Instantiate(ninjaPrefab.name, spawnpoints[count].position, spawnpoints[count].rotation);
-                photonView.TransferOwnership(p);
+                ninja.GetComponent<PhotonView>().TransferOwnership(p);
                 count += 1;
             }
         }

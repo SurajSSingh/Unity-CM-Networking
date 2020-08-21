@@ -414,12 +414,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7201f8954189c4d769c48f324a1d920f, type: 3}
---- !u!1 &306500505 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 175128, guid: 7201f8954189c4d769c48f324a1d920f,
-    type: 3}
-  m_PrefabInstance: {fileID: 306500504}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &402024047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,7 +1411,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1441,7 +1435,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 741697589}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.18, y: 0.18, z: -10}
+  m_LocalPosition: {x: 0.31, y: 1.1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2315,7 +2309,7 @@ MonoBehaviour:
   - {fileID: 1936575196}
   - {fileID: 402024048}
   - {fileID: 762100794}
-  ninjaPrefab: {fileID: 306500505}
+  ninjaPrefab: {fileID: 175128, guid: 7201f8954189c4d769c48f324a1d920f, type: 3}
 --- !u!1 &1936575195
 GameObject:
   m_ObjectHideFlags: 0

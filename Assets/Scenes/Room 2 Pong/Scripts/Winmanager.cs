@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Photon.Pun;
 
-public class Winmanager : MonoBehaviour
+public class Winmanager : MonoBehaviourPunCallbacks
 {
     public GameObject winScreen;
     public GameObject leftWinner;
@@ -29,5 +31,17 @@ public class Winmanager : MonoBehaviour
             rightWinner.SetActive(true);
         }
         
+    }
+
+    public void BackToMenu()
+    {
+        PhotonNetwork.LeaveRoom(true);
+        SceneManager.LoadScene(0);
+    }
+
+    public void ReloadLevel()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(1);
     }
 }

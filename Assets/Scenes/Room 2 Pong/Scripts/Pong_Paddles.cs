@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-using Photon.Realtime;
 
 public class Pong_Paddles : MonoBehaviourPunCallbacks
 {
@@ -37,16 +36,6 @@ public class Pong_Paddles : MonoBehaviourPunCallbacks
             pos = new Vector2(GameManager_GameConfig.bottomLeft.x, 0);
             pos += Vector2.right * transform.localScale.x;
             input = "Left Player";
-            if (PhotonNetwork.IsConnected)
-            {
-                foreach(Player p in PhotonNetwork.PlayerListOthers)
-                {
-                    Debug.Log(p);
-                }
-                
-                Debug.Log(PhotonNetwork.PlayerListOthers);
-                photonView.TransferOwnership(PhotonNetwork.PlayerListOthers[0]);
-            }
         }
         transform.position = pos;
         transform.name = input;

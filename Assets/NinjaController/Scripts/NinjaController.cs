@@ -98,7 +98,7 @@ namespace NinjaController {
 
     public void Update() {
 
-            if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
+            if (PhotonNetwork.IsConnected && !photonView.IsMine)
             {
                 return;
             }
