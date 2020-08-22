@@ -33,8 +33,8 @@ public class GameManager_GameConfig : MonoBehaviourPunCallbacks
 
             //Debug.Log(PhotonNetwork.PlayerListOthers[0]);
 
-            pongplayer1.GetComponent<Pong_Paddles>().Init(true, PhotonNetwork.LocalPlayer);
-            pongplayer2.GetComponent<Pong_Paddles>().Init(false, PhotonNetwork.LocalPlayer);//PhotonNetwork.PlayerListOthers[0]);
+            pongplayer1.GetComponent<Pong_Paddles>().Init(true, PhotonNetwork.PlayerListOthers[0]);
+            pongplayer2.GetComponent<Pong_Paddles>().Init(false, PhotonNetwork.PlayerListOthers[0]);//PhotonNetwork.PlayerListOthers[0]);
         }
         else if (!PhotonNetwork.IsConnected)
         {
