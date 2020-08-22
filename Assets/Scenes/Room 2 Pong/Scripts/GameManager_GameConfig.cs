@@ -31,10 +31,10 @@ public class GameManager_GameConfig : MonoBehaviourPunCallbacks
             GameObject pongplayer1 = PhotonNetwork.Instantiate(pongplayer.name, pongplayer.transform.position, pongplayer.transform.rotation);
             GameObject pongplayer2 = PhotonNetwork.Instantiate(pongplayer.name, pongplayer.transform.position, pongplayer.transform.rotation);
 
-            Debug.Log(PhotonNetwork.PlayerListOthers[0]);
+            //Debug.Log(PhotonNetwork.PlayerListOthers[0]);
 
-            pongplayer1.GetComponent<Pong_Paddles>().Init(true);
-            pongplayer2.GetComponent<Pong_Paddles>().Init(false, PhotonNetwork.PlayerListOthers[0]);
+            pongplayer1.GetComponent<Pong_Paddles>().Init(true, PhotonNetwork.LocalPlayer);
+            pongplayer2.GetComponent<Pong_Paddles>().Init(false, PhotonNetwork.LocalPlayer);//PhotonNetwork.PlayerListOthers[0]);
         }
         else if (!PhotonNetwork.IsConnected)
         {
