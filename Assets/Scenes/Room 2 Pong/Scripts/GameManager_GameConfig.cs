@@ -33,13 +33,12 @@ public class GameManager_GameConfig : MonoBehaviourPunCallbacks
 
             Debug.Log(PhotonNetwork.PlayerListOthers[0]);
 
-            pongplayer2.GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.PlayerListOthers[0]);
-
             pongplayer1.GetComponent<Pong_Paddles>().Init(true);
-            pongplayer2.GetComponent<Pong_Paddles>().Init(false);
+            pongplayer2.GetComponent<Pong_Paddles>().Init(false, PhotonNetwork.PlayerListOthers[0]);
         }
         else if (!PhotonNetwork.IsConnected)
         {
+            Debug.Log("Normal Non-Networked Game");
 
             Instantiate(pong, pong.transform.position, pong.transform.rotation);
 
