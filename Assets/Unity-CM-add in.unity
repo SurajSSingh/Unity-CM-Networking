@@ -517,6 +517,7 @@ GameObject:
   - component: {fileID: 1124975982}
   - component: {fileID: 1124975984}
   - component: {fileID: 1124975985}
+  - component: {fileID: 1124975986}
   m_Layer: 0
   m_Name: house_04_03
   m_TagString: Untagged
@@ -631,11 +632,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124975981}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d436c2b6c67f148feb0c4885636efe2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1124975986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124975981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95214bb25087a543a0a0c30b12868f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerPrefab: {fileID: 4466711888203954677, guid: bed03df3fe2424e72a3cb6efbf6ad81d,
+    type: 3}
+  playerspawn:
+  - {fileID: 382439007}
+  - {fileID: 1777678709}
+  - {fileID: 485954724}
+  - {fileID: 289307498}
 --- !u!1 &1516827557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,6 +1100,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4466711888203954665, guid: bed03df3fe2424e72a3cb6efbf6ad81d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4466711888203954667, guid: bed03df3fe2424e72a3cb6efbf6ad81d,
         type: 3}
       propertyPath: viewIdField
