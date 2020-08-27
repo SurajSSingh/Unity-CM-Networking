@@ -11,6 +11,7 @@ public class GameNetworkScript : MonoBehaviourPunCallbacks
 
     public void OnClick_LeaveGame()
     {
+        StartCoroutine(LeaveGame());
     }
 
     IEnumerator LeaveGame()
