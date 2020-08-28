@@ -19,6 +19,7 @@ public class Pong_Ball : MonoBehaviour
         wm = GameObject.Find("Canvas").GetComponent<Winmanager>();
         direction = Vector2.one.normalized;
         radius = transform.localScale.x / 2;
+        speed = 0;
     }    
 
     void Update()

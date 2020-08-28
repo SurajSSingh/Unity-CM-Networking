@@ -19,7 +19,7 @@ public class Pong_Paddles : MonoBehaviourPunCallbacks
     }
 
     //This function will let GamaManager_GameConfig access all yer memes.
-    public void Init(bool isRightPlayer, Player player = null)
+    public void Init(bool isRightPlayer)
     {
         isRight = isRightPlayer;
         Vector2 pos = Vector2.zero;
@@ -40,12 +40,6 @@ public class Pong_Paddles : MonoBehaviourPunCallbacks
         }
         transform.position = pos;
         transform.name = input;
-
-        if(PhotonNetwork.IsConnected && player != null)
-        {
-            GetComponent<PhotonView>().TransferOwnership(player);
-        }
-
     }
 
     void Update()

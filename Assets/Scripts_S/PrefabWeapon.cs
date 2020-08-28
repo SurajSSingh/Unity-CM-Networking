@@ -19,12 +19,20 @@ public class PrefabWeapon : MonoBehaviourPunCallbacks
         }
         if (Input.GetButtonDown("Fire1"))
 		{
-			Shoot();
+            if (PhotonNetwork.IsConnected)
+            {
+				photonView.RPC("Shoot", RpcTarget.All, firePoint.position, firePoint.rotation, this.transform.parent);
+			}
+            else
+            {
+				Shoot(firePoint.position, firePoint.rotation, this.transform.parent);
+			}
 		}
 	}
 
-	void Shoot()
+	[PunRPC]
+	void Shoot(Vector3 pos, Quaternion rot, Transform parent)
 	{
-		Instantiate(bulletPrefab, firePoint.position, firePoint.rotation, this.transform.parent);
+		Instantiate(bulletPrefab, pos, rot, parent);
 	}
 }

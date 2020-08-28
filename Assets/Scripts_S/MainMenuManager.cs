@@ -49,6 +49,7 @@ public class MainMenuManager : MonoBehaviour
     public void QuitGame()
     {
         // Deletes name and other values when exiting the game
+        PhotonNetwork.Disconnect();
         PlayerPrefs.DeleteAll();
         Application.Quit();
     }
