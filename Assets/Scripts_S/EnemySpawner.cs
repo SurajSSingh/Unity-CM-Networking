@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawner : MonoBehaviourPun
 {
     public GameObject enemyPrefab;
     public Transform goal;
@@ -16,11 +17,18 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnEnemy());
+        if (PhotonNetwork.IsConnected && PhotonNetwork.IsMasterClient)
+        {
+            StartCoroutine(SpawnEnemy());
+        }
     }
 
     private void Update()
     {
+        if (PhotonNetwork.IsConnected && !PhotonNetwork.IsMasterClient)
+        {
+            return;
+        }
         increaseTimer += Time.deltaTime;
         if (increaseTimer >= 5)
         {
@@ -48,10 +56,16 @@ public class EnemySpawner : MonoBehaviour
         
         while (true)
         {
-            GameObject enemy = Instantiate(enemyPrefab,this.transform);
-            enemy.GetComponent<EnemyZombie>().target = goal;
-            enemy.GetComponent<EnemyZombie>().speed = Random.Range(minSpeed, minSpeed * speedMultiplier);
+            photonView.RPC("RPC_Spawn", RpcTarget.All, this.transform.position, this.transform.rotation);
             yield return new WaitForSeconds(spawnTimer);
         }
+    }
+
+    [PunRPC]
+    public void RPC_Spawn(Vector3 pos, Quaternion rot)
+    {
+        GameObject enemy = PhotonNetwork.Instantiate(enemyPrefab.name, pos, rot);
+        enemy.GetComponent<EnemyZombie>().target = goal;
+        enemy.GetComponent<EnemyZombie>().speed = Random.Range(minSpeed, minSpeed * speedMultiplier);
     }
 }

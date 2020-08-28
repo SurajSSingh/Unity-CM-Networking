@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class Shooting : MonoBehaviour
+public class Shooting : MonoBehaviourPunCallbacks
 {
     public Transform firepoint;
     public GameObject bulletPrefab;
@@ -13,20 +13,29 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PhotonNetwork.IsConnected)
+        if (PhotonNetwork.IsConnected && !photonView.IsMine)
         {
             return;
         }
 
         if (Input.GetButtonDown("Fire1"))
         {
-            Shoot();
+            if (PhotonNetwork.IsConnected)
+            {
+                photonView.RPC("RPC_Shoot", RpcTarget.All, firepoint.position, firepoint.rotation);
+            }
+            else
+            {
+                RPC_Shoot(firepoint.position, firepoint.rotation);
+            }
+            
         }
     }
 
-    void Shoot()
+    [PunRPC]
+    void RPC_Shoot(Vector3 pos, Quaternion rot)
     {
-        GameObject bullet = Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
+        GameObject bullet = PhotonNetwork.Instantiate(bulletPrefab.name, pos, rot);
         bullet.GetComponent<Rigidbody2D>().AddForce(firepoint.up * bulletForce, ForceMode2D.Impulse);
     }
 }

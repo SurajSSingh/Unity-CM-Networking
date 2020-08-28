@@ -131,6 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 39904114}
   - component: {fileID: 39904115}
+  - component: {fileID: 39904116}
   m_Layer: 0
   m_Name: EnemySpawner (9)
   m_TagString: Untagged
@@ -146,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39904113}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 86.6, y: -4, z: 0}
+  m_LocalPosition: {x: 84, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2136221268}
@@ -170,6 +171,28 @@ MonoBehaviour:
   minSpeed: 30
   speedMultiplier: 1
   spawnTimer: 7
+--- !u!114 &39904116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39904113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 0
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  viewIdField: 4
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &222071036
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,6 +203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 222071037}
   - component: {fileID: 222071038}
+  - component: {fileID: 222071039}
   m_Layer: 0
   m_Name: EnemySpawner (6)
   m_TagString: Untagged
@@ -219,6 +243,28 @@ MonoBehaviour:
   minSpeed: 30
   speedMultiplier: 1
   spawnTimer: 3
+--- !u!114 &222071039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222071036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 0
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  viewIdField: 7
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &288143164
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 288143165}
   - component: {fileID: 288143166}
+  - component: {fileID: 288143167}
   m_Layer: 0
   m_Name: EnemySpawner (3)
   m_TagString: Untagged
@@ -268,6 +315,28 @@ MonoBehaviour:
   minSpeed: 30
   speedMultiplier: 1
   spawnTimer: 5
+--- !u!114 &288143167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288143164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 0
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  viewIdField: 8
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &289307497
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,6 +377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 309004018}
   - component: {fileID: 309004019}
+  - component: {fileID: 309004020}
   m_Layer: 0
   m_Name: EnemySpawner (1)
   m_TagString: Untagged
@@ -347,6 +417,28 @@ MonoBehaviour:
   minSpeed: 30
   speedMultiplier: 1
   spawnTimer: 5
+--- !u!114 &309004020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309004017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 0
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  viewIdField: 6
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &367402795
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,6 +449,7 @@ GameObject:
   m_Component:
   - component: {fileID: 367402796}
   - component: {fileID: 367402797}
+  - component: {fileID: 367402798}
   m_Layer: 0
   m_Name: EnemySpawner (7)
   m_TagString: Untagged
@@ -396,6 +489,28 @@ MonoBehaviour:
   minSpeed: 30
   speedMultiplier: 1
   spawnTimer: 2
+--- !u!114 &367402798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367402795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 0
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  viewIdField: 5
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &382439006
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,6 +581,7 @@ GameObject:
   m_Component:
   - component: {fileID: 981933097}
   - component: {fileID: 981933098}
+  - component: {fileID: 981933099}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -505,6 +621,28 @@ MonoBehaviour:
   minSpeed: 30
   speedMultiplier: 1
   spawnTimer: 5
+--- !u!114 &981933099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981933096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 0
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  viewIdField: 3
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1124975981
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,6 +975,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1665999038}
   - component: {fileID: 1665999039}
+  - component: {fileID: 1665999040}
   m_Layer: 0
   m_Name: EnemySpawner (8)
   m_TagString: Untagged
@@ -876,6 +1015,28 @@ MonoBehaviour:
   minSpeed: 30
   speedMultiplier: 1
   spawnTimer: 2
+--- !u!114 &1665999040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665999037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 0
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  viewIdField: 9
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1728032392
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,6 +1047,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1728032393}
   - component: {fileID: 1728032394}
+  - component: {fileID: 1728032395}
   m_Layer: 0
   m_Name: EnemySpawner (4)
   m_TagString: Untagged
@@ -925,6 +1087,28 @@ MonoBehaviour:
   minSpeed: 30
   speedMultiplier: 1
   spawnTimer: 3
+--- !u!114 &1728032395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728032392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 0
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  viewIdField: 11
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1750360258
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,6 +1119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1750360259}
   - component: {fileID: 1750360260}
+  - component: {fileID: 1750360261}
   m_Layer: 0
   m_Name: EnemySpawner (2)
   m_TagString: Untagged
@@ -974,6 +1159,28 @@ MonoBehaviour:
   minSpeed: 30
   speedMultiplier: 1
   spawnTimer: 5
+--- !u!114 &1750360261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750360258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 0
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  viewIdField: 10
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1777678708
 GameObject:
   m_ObjectHideFlags: 0
@@ -1014,6 +1221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2015831596}
   - component: {fileID: 2015831597}
+  - component: {fileID: 2015831598}
   m_Layer: 0
   m_Name: EnemySpawner (5)
   m_TagString: Untagged
@@ -1053,6 +1261,28 @@ MonoBehaviour:
   minSpeed: 30
   speedMultiplier: 1
   spawnTimer: 3
+--- !u!114 &2015831598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015831595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 0
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  viewIdField: 2
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &2136221267
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,6 +1334,11 @@ PrefabInstance:
         type: 3}
       propertyPath: levelIndex
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3152576091786136807, guid: 29db3f919e5024ea3978f372013f0428,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3152576093178669614, guid: 29db3f919e5024ea3978f372013f0428,
         type: 3}
@@ -1174,11 +1409,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4466711888203954665, guid: bed03df3fe2424e72a3cb6efbf6ad81d,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4466711888203954667, guid: bed03df3fe2424e72a3cb6efbf6ad81d,
         type: 3}
       propertyPath: viewIdField
@@ -1199,11 +1429,6 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1597242430}
-    - target: {fileID: 4466711888203954678, guid: bed03df3fe2424e72a3cb6efbf6ad81d,
-        type: 3}
-      propertyPath: moveSpeed
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 4466711888203954679, guid: bed03df3fe2424e72a3cb6efbf6ad81d,
         type: 3}
       propertyPath: m_LocalPosition.x

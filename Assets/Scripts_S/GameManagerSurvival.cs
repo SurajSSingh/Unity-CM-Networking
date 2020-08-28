@@ -11,7 +11,7 @@ public List<Transform> playerspawn;
 
     void Start()
     {
-        if(PhotonNetwork.IsConnected)
+        if(PhotonNetwork.IsConnected && PhotonNetwork.IsMasterClient)
         {
             //PhotonNetwork.Instantiate(PlayerPrefab.name,new Vector3(0,0), Quaternion.identity, 0);
             int count = 0;
