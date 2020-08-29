@@ -25,7 +25,7 @@ public class GameManager_GameConfig : MonoBehaviourPunCallbacks
 
         if (PhotonNetwork.IsMasterClient)
         {
-            photonView.RPC("SyncScreenSize", RpcTarget.AllBuffer,bottomLeft,topRight);
+            photonView.RPC("SyncScreenSize", RpcTarget.AllBuffered,bottomLeft,topRight);
         }
         
 
