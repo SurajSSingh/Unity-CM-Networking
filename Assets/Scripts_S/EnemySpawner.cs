@@ -64,7 +64,7 @@ public class EnemySpawner : MonoBehaviourPun
     [PunRPC]
     public void RPC_Spawn(Vector3 pos, Quaternion rot)
     {
-        GameObject enemy = PhotonNetwork.Instantiate(enemyPrefab.name, pos, rot);
+        GameObject enemy = Instantiate(enemyPrefab, pos, rot);
         enemy.GetComponent<EnemyZombie>().target = goal;
         enemy.GetComponent<EnemyZombie>().speed = Random.Range(minSpeed, minSpeed * speedMultiplier);
     }
