@@ -35,7 +35,7 @@ public class PrefabWeapon : MonoBehaviourPunCallbacks
 	[PunRPC]
 	void Shoot(Vector3 pos, Quaternion rot)
 	{
-		Instantiate(bulletPrefab.name, pos, rot);
+		Instantiate(bulletPrefab, pos, rot);
 	}
 
 	public void ChangeHealth(float damage)
