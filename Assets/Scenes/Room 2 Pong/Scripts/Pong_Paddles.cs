@@ -32,7 +32,8 @@ public class Pong_Paddles : MonoBehaviourPunCallbacks
             pos -= Vector2.right * transform.localScale.x;
             input = "Right Player";
         }
-        else //Creates memes on the left of the screen 
+        else 
+        //Creates memes on the left of the screen
         {
             pos = new Vector2(GameManager_GameConfig.bottomLeft.x, 0);
             pos += Vector2.right * transform.localScale.x;
@@ -53,7 +54,7 @@ public class Pong_Paddles : MonoBehaviourPunCallbacks
 
         float move = Input.GetAxis(input) * Time.deltaTime * speed;
 
-        if (transform.position.y < GameManager_GameConfig.bottomLeft.y + height / 2 && move <0)
+        if (transform.position.y < GameManager_GameConfig.bottomLeft.y + height / 2 && move < 0)
         {
             move = 0;
         }

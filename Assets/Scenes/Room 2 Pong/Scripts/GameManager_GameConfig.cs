@@ -23,7 +23,10 @@ public class GameManager_GameConfig : MonoBehaviourPunCallbacks
         bottomLeft = Camera.main.ScreenToWorldPoint (new Vector2 (0, 0));
         topRight = Camera.main.ScreenToWorldPoint(new Vector2 (Screen.width, Screen.height));
 
-        
+        if (PhotonNetwork.IsMasterClient)
+        {
+            photonView.RPC("SyncScreenSize", RpcTarget.AllBuffer,bottomLeft,topRight);
+        }
         
 
         if (PhotonNetwork.IsConnected) {
@@ -56,6 +59,17 @@ public class GameManager_GameConfig : MonoBehaviourPunCallbacks
 
         
         
+    }
+
+
+
+
+    [PunRPC]
+
+    void SyncScreenSize(Vector2 bL, Vector2 tR)
+    {
+        bottomLeft = bL;
+        topRight = tR;
     }
 
 }
