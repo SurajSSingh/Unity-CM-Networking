@@ -33,7 +33,6 @@ public class Pong_Ball : MonoBehaviour
         if (transform.position.y > GameManager_GameConfig.topRight.y - radius/6 && direction.y > 0)
         {
             direction.y = -direction.y;
-
         }
 
 
