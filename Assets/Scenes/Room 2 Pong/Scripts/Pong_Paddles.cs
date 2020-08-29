@@ -37,21 +37,9 @@ public class Pong_Paddles : MonoBehaviourPunCallbacks
             pos = new Vector2(GameManager_GameConfig.bottomLeft.x, 0);
             pos += Vector2.right * transform.localScale.x;
             input = "Left Player";
-            if (PhotonNetwork.IsConnected)
-            {
-                Debug.Log(PhotonNetwork.PlayerList.GetLength(0));
-                foreach(Player p in PhotonNetwork.PlayerList)
-                {
-                    Debug.Log(p);
-                }
-                
-                Debug.Log(PhotonNetwork.PlayerListOthers);
-                photonView.TransferOwnership(PhotonNetwork.PlayerListOthers[0]);
-            }
         }
         transform.position = pos;
         transform.name = input;
-
     }
 
     void Update()

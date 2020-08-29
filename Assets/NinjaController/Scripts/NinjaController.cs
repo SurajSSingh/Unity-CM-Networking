@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using System.Runtime.InteropServices;
-using System.Diagnostics;
 
 namespace NinjaController {
 
@@ -25,6 +24,8 @@ namespace NinjaController {
     private float timeRealLastGroundCollision = 0;
     private float timeRealLastWallLeftCollision = 0;
     private float timeRealLastWallRightCollision = 0;
+
+    private float sign = 1;
 
     public bool IsOnGround {
       get {
@@ -98,22 +99,25 @@ namespace NinjaController {
 
     public void Update() {
 
-            if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
+            if (PhotonNetwork.IsConnected && !photonView.IsMine)
             {
                 return;
             }
 
             //float sign = Mathf.Sign(Input.GetAxisRaw("Horizontal"));
-            float sign = Mathf.Sign(RBody.velocity.x);
-            if (sign != 0)
-            {
-                this.gameObject.transform.localScale = new Vector3(sign * transform.localScale.x, transform.localScale.y * 1);
-                firepoint.transform.localScale = new Vector3(sign * transform.localScale.x, transform.localScale.y * 1);
-                firepoint.transform.eulerAngles = new Vector3(0, 0, sign < 0? -180: sign > 0? 0: firepoint.transform.eulerAngles.z);
-            }
+            //float sign = Mathf.Sign(RBody.velocity.x);
 
-      //let's reset forces to 0 and then add regular gravitation
-      SimResetForce();
+            //if (RBody.velocity.x != 0)
+            //{
+            //    UnityEngine.Debug.Log(sign);
+            //    this.gameObject.transform.localScale = new Vector3(sign * transform.localScale.x, transform.localScale.y * 1);
+            //    firepoint.transform.localPosition = new Vector3(-1 * sign * firepoint.transform.localPosition.x, firepoint.transform.localPosition.y);
+            //    firepoint.transform.localEulerAngles = new Vector3(0, 0, sign < 0 ? -180 : 0);
+            //}
+
+
+            //let's reset forces to 0 and then add regular gravitation
+            SimResetForce();
       SimAddForce(new Vector2(0, PhysicsParams.gameGravity) * EntityMass);
 
       //process key input (like jumping key pressed, etc...)
@@ -155,11 +159,19 @@ namespace NinjaController {
       float inputAxisX = Input.GetAxisRaw("Horizontal");
       bool isKeyDownLeft = inputAxisX < -0.5f;
       bool isKeyDownRight = inputAxisX > 0.5f;
+        if (Mathf.Abs(RBody.velocity.x) > 0.5 && Mathf.Sign(RBody.velocity.x) != sign)
+        {
+                //Debug.Log(sign);
+                sign = Mathf.Sign(RBody.velocity.x);
+                this.gameObject.transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y);
+                //firepoint.transform.localPosition = new Vector3(-1 * firepoint.transform.localPosition.x, firepoint.transform.localPosition.y);
+                firepoint.transform.localEulerAngles = new Vector3(0, 0, firepoint.transform.localEulerAngles.z-180);
+        }
 
-      //-----------------
-      //JUMPING LOGIC:
-      //player is on ground
-      if (isPlayerInAir == false) {
+        //-----------------
+        //JUMPING LOGIC:
+        //player is on ground
+        if (isPlayerInAir == false) {
         //in case the player is on ground and does not press the jump key, he
         //should be allowed to jump
         if (isKeyDownJump == false) {

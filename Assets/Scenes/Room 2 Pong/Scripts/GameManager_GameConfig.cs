@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
 
 public class GameManager_GameConfig : MonoBehaviourPunCallbacks
 {
@@ -23,19 +24,26 @@ public class GameManager_GameConfig : MonoBehaviourPunCallbacks
         topRight = Camera.main.ScreenToWorldPoint(new Vector2 (Screen.width, Screen.height));
 
         
+        
 
+        if (PhotonNetwork.IsConnected) {
+            if (PhotonNetwork.IsMasterClient)
+            {
+                PhotonNetwork.Instantiate(pong.name, pong.transform.position, pong.transform.rotation);
+                GameObject pongplayer1 = PhotonNetwork.Instantiate(pongplayer.name, pongplayer.transform.position, pongplayer.transform.rotation);
+                pongplayer1.GetComponent<Pong_Paddles>().Init(true);
 
-        if (PhotonNetwork.IsConnected && PhotonNetwork.IsMasterClient) {
-            PhotonNetwork.Instantiate(pong.name, pong.transform.position, pong.transform.rotation);
+            }
+            else
+            {
+                GameObject pongplayer2 = PhotonNetwork.Instantiate(pongplayer.name, pongplayer.transform.position, pongplayer.transform.rotation);
+                pongplayer2.GetComponent<Pong_Paddles>().Init(false);//PhotonNetwork.PlayerListOthers[0]);
 
-            GameObject pongplayer1 = PhotonNetwork.Instantiate(pongplayer.name, pongplayer.transform.position, pongplayer.transform.rotation);
-            GameObject pongplayer2 = PhotonNetwork.Instantiate(pongplayer.name, pongplayer.transform.position, pongplayer.transform.rotation);
-
-            pongplayer1.GetComponent<Pong_Paddles>().Init(true);
-            pongplayer2.GetComponent<Pong_Paddles>().Init(false);
+            }
         }
         else if (!PhotonNetwork.IsConnected)
         {
+            Debug.Log("Normal Non-Networked Game");
 
             Instantiate(pong, pong.transform.position, pong.transform.rotation);
 

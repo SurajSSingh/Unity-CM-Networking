@@ -19,14 +19,12 @@ public class Bulet : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D hitInfo)
 	{
-		//Enemy enemy = hitInfo.GetComponent<Enemy>();
-		//if (enemy != null)
-		//{
-		//enemy.TakeDamage(damage);
-		//}
-		//
-		// Instantiate(impactEffect, transform.position, transform.rotation);
-		if (this.transform.parent != hitInfo.transform)
+		PrefabWeapon enemy = hitInfo.GetComponent<PrefabWeapon>();
+        if (enemy != null)
+        {
+            enemy.ChangeHealth(self.Damage);
+        }
+        if (this.transform.parent != hitInfo.transform)
 		{
 			Destroy(gameObject);
 		}
