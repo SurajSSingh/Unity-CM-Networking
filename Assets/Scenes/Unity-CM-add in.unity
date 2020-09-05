@@ -811,6 +811,7 @@ GameObject:
   - component: {fileID: 1124975982}
   - component: {fileID: 1124975984}
   - component: {fileID: 1124975986}
+  - component: {fileID: 1124975985}
   m_Layer: 0
   m_Name: house_04_03
   m_TagString: Untagged
@@ -918,6 +919,28 @@ PolygonCollider2D:
       - {x: 0.89, y: 4.39}
       - {x: 3.6999998, y: 2.95}
       - {x: 3.73, y: -0.63}
+--- !u!114 &1124975985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124975981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 0
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  viewIdField: 12
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!114 &1124975986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -937,6 +960,7 @@ MonoBehaviour:
   - {fileID: 1777678709}
   - {fileID: 485954724}
   - {fileID: 289307498}
+  score: 0
   endScreen: {fileID: 1509587158}
 --- !u!1 &1509587158
 GameObject:
