@@ -88,7 +88,8 @@ public class Pong_Ball : MonoBehaviourPunCallbacks
         }
     }
 
-    void WinGame_RPC(bool leftWin)
+    [PunRPC]
+    public void WinGame_RPC(bool leftWin)
     {
         wm.WinGame(leftWin);
         Time.timeScale = 0;

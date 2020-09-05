@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: NewGame
   m_EditorClassIdentifier: 
   gameVersion: 0.1.0
-  nickName: NewGuest
+  nickName: Guest

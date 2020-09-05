@@ -16,8 +16,8 @@ public class GameNetworkScript : MonoBehaviourPunCallbacks
 
     IEnumerator LeaveGame()
     {
-        PhotonNetwork.LeaveRoom();
-        while (PhotonNetwork.InRoom)
+        PhotonNetwork.Disconnect();
+        while (PhotonNetwork.IsConnected)
         {
             yield return null;
         }
