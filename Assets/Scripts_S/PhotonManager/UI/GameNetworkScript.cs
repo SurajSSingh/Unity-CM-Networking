@@ -28,8 +28,15 @@ public class GameNetworkScript : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.IsMasterClient)
         {
-            StartCoroutine(ReloadGame());
+            photonView.RPC("RPC_Reload", RpcTarget.All);
         }
+    }
+
+    [PunRPC]
+    public void RPC_Reload()
+    {
+        //StartCoroutine(ReloadGame());
+        PhotonNetwork.LoadLevel(levelIndex);
     }
 
     IEnumerator ReloadGame()

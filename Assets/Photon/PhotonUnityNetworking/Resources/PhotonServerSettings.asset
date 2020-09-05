@@ -41,6 +41,10 @@ MonoBehaviour:
   - RPC_Spawn
   - Shoot
   - SyncScreenSize
+  - WinGame
+  - RPC_Reload
+  - RPC_AddScore
+  - RPC_End
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0

@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class Pong_Ball : MonoBehaviour
+public class Pong_Ball : MonoBehaviourPunCallbacks
 {
     [SerializeField]
     public float speed;
@@ -44,15 +46,13 @@ public class Pong_Ball : MonoBehaviour
         if (transform.position.x < GameManager_GameConfig.bottomLeft.x + radius && direction.x < 0)
         {
             Debug.Log("Player on the right wins!");
-            wm.WinGame(false);
-            Time.timeScale = 0;
+            photonView.RPC("WinGame_RPC", RpcTarget.All, false);
         }
 
         if (transform.position.x > GameManager_GameConfig.topRight.x - radius && direction.x > 0)
         {
             Debug.Log("Player on the left wins!");
-            wm.WinGame(true);
-            Time.timeScale = 0;
+            photonView.RPC("WinGame_RPC", RpcTarget.All, true);
         }
 
 
@@ -88,5 +88,9 @@ public class Pong_Ball : MonoBehaviour
         }
     }
 
-
+    void WinGame_RPC(bool leftWin)
+    {
+        wm.WinGame(leftWin);
+        Time.timeScale = 0;
+    }
 }

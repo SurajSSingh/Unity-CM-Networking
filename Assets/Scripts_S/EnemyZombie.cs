@@ -29,11 +29,16 @@ public class EnemyZombie : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
-        if (collision.gameObject.GetComponent<SurvivalGameManager>() != null)
+        if (collision.gameObject.GetComponent<GameManagerSurvival>() != null)
         {
             Time.timeScale = 0.0f;
-            Debug.Log("End game");
+            Debug.Log("End Game");
+            //collision.gameObject.GetComponent<GameManagerSurvival>().EndGame();
         }
+        //else if (target.GetComponent<GameManagerSurvival>() != null)
+        //{
+        //    target.GetComponent<GameManagerSurvival>().AddToScore();
+        //}
         Destroy(this.gameObject);
     }
 }
