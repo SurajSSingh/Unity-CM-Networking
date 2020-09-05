@@ -35,7 +35,7 @@ public class Shooting : MonoBehaviourPunCallbacks
     [PunRPC]
     void RPC_Shoot(Vector3 pos, Quaternion rot)
     {
-        GameObject bullet = Instantiate(bulletPrefab, pos, rot);
+        GameObject bullet = PhotonNetwork.Instantiate(bulletPrefab.name, pos, rot);
         bullet.GetComponent<Rigidbody2D>().AddForce(firepoint.up * bulletForce, ForceMode2D.Impulse);
     }
 }
