@@ -45,6 +45,7 @@ MonoBehaviour:
   - RPC_Reload
   - RPC_AddScore
   - RPC_End
+  - WinGame_RPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0
