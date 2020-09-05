@@ -23,19 +23,19 @@ public class PrefabWeapon : MonoBehaviourPunCallbacks
 		{
             if (PhotonNetwork.IsConnected)
             {
-				photonView.RPC("Shoot", RpcTarget.All, firePoint.position, firePoint.rotation);
+				photonView.RPC("Shoot", RpcTarget.All, bulletPrefab.name, firePoint.position, firePoint.rotation);
 			}
             else
             {
-				Shoot(firePoint.position, firePoint.rotation);
+				Shoot(bulletPrefab.name, firePoint.position, firePoint.rotation);
 			}
 		}
 	}
 
 	[PunRPC]
-	void Shoot(Vector3 pos, Quaternion rot)
+	void Shoot(string prefab, Vector3 pos, Quaternion rot)
 	{
-		PhotonNetwork.Instantiate(bulletPrefab.name, pos, rot);
+		Instantiate(bulletPrefab, pos, rot);
 	}
 
 	public void ChangeHealth(float damage)

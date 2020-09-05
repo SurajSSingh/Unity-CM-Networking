@@ -56,15 +56,15 @@ public class EnemySpawner : MonoBehaviourPun
         
         while (true)
         {
-            photonView.RPC("RPC_Spawn", RpcTarget.All, this.transform.position, this.transform.rotation);
+            photonView.RPC("RPC_Spawn", RpcTarget.All, enemyPrefab.name, this.transform.position, this.transform.rotation);
             yield return new WaitForSeconds(spawnTimer);
         }
     }
 
     [PunRPC]
-    public void RPC_Spawn(Vector3 pos, Quaternion rot)
+    public void RPC_Spawn(string prefab, Vector3 pos, Quaternion rot)
     {
-        GameObject enemy = PhotonNetwork.Instantiate(enemyPrefab.name, pos, rot);
+        GameObject enemy = Instantiate(enemyPrefab, pos, rot);
         enemy.GetComponent<EnemyZombie>().target = goal;
         enemy.GetComponent<EnemyZombie>().speed = Random.Range(minSpeed, minSpeed * speedMultiplier);
     }

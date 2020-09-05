@@ -22,20 +22,20 @@ public class Shooting : MonoBehaviourPunCallbacks
         {
             if (PhotonNetwork.IsConnected)
             {
-                photonView.RPC("RPC_Shoot", RpcTarget.All, firepoint.position, firepoint.rotation);
+                photonView.RPC("RPC_Shoot", RpcTarget.All, bulletPrefab.name, firepoint.position, firepoint.rotation);
             }
             else
             {
-                RPC_Shoot(firepoint.position, firepoint.rotation);
+                RPC_Shoot(bulletPrefab.name, firepoint.position, firepoint.rotation);
             }
             
         }
     }
 
     [PunRPC]
-    void RPC_Shoot(Vector3 pos, Quaternion rot)
+    void RPC_Shoot(string prefab, Vector3 pos, Quaternion rot)
     {
-        GameObject bullet = PhotonNetwork.Instantiate(bulletPrefab.name, pos, rot);
+        GameObject bullet = Instantiate(bulletPrefab, pos, rot);
         bullet.GetComponent<Rigidbody2D>().AddForce(firepoint.up * bulletForce, ForceMode2D.Impulse);
     }
 }
