@@ -8,18 +8,20 @@ public class ShooterGameManager : MonoBehaviourPunCallbacks
 {
     public List<Transform> spawnpoints;
     public GameObject ninjaPrefab;
+    private int numberOfPlayer;
     // Start is called before the first frame update
     void Start()
     {
         if (spawnpoints.Count >= 3 && PhotonNetwork.IsMasterClient)
         {
-            int count = 0;
+            numberOfPlayer = 0;
             foreach(Player p in PhotonNetwork.PlayerList)
             {
-                GameObject ninja = PhotonNetwork.Instantiate(ninjaPrefab.name, spawnpoints[count].position, spawnpoints[count].rotation);
+                GameObject ninja = PhotonNetwork.Instantiate(ninjaPrefab.name, spawnpoints[numberOfPlayer].position, spawnpoints[numberOfPlayer].rotation);
                 ninja.GetComponent<PhotonView>().TransferOwnership(p);
-                count += 1;
+                numberOfPlayer += 1;
             }
+            photonView.RPC("RPC_syncPlayers", RpcTarget.All, numberOfPlayer);
         }
     }
 
@@ -27,5 +29,10 @@ public class ShooterGameManager : MonoBehaviourPunCallbacks
     void Update()
     {
         
+    }
+    [PunRPC]
+    public void RPC_syncPlayers(int players)
+    {
+        numberOfPlayer = players;
     }
 }
