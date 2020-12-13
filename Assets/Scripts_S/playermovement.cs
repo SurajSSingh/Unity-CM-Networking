@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playermovement : MonoBehaviour
-{   
+public class PlayerMovement : MonoBehaviour
+{
 public Rigidbody2D rb;
-   
+
     public float moveSpeed = 5f;
-    
+
     public Camera cam;
     Vector2 movement;
     Vector2 mousePos;
@@ -15,16 +15,17 @@ public Rigidbody2D rb;
     {
         rb = GetComponent<Rigidbody2D>();
         cam = Camera.main;
+        //this.transform.Move
     }
 
     // Update is called once per frame
     void Update()
     {
        movement.x = Input.GetAxisRaw("Horizontal");
-       movement.y = Input.GetAxisRaw("Vertical"); 
-       
+       movement.y = Input.GetAxisRaw("Vertical");
+
        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-      
+
        //Debug.Log(movement);
     }
     void FixedUpdate()
